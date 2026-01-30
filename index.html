@@ -8,10 +8,9 @@
 body{
   margin:0;
   font-family:'Segoe UI',sans-serif;
-  background:linear-gradient(135deg,#ff758c,#ff7eb3);
+  background:linear-gradient(135deg,#ff4d6d,#ff9a9e);
   color:white;
   text-align:center;
-  overflow-x:hidden;
 }
 
 .screen{
@@ -19,137 +18,137 @@ body{
   min-height:100vh;
   padding:40px 20px;
   box-sizing:border-box;
-  animation:fade 0.8s ease;
 }
 
 .active{display:block;}
 
-h1,h2,p{margin:20px 0;}
+h1{
+  font-size:42px;
+  margin-top:60px;
+}
+
+h2{
+  font-size:32px;
+}
+
+p{
+  font-size:22px;
+  line-height:1.6;
+}
 
 button{
-  padding:14px 32px;
+  margin-top:40px;
+  padding:16px 36px;
   border:none;
-  border-radius:30px;
+  border-radius:40px;
   background:white;
   color:#ff4d6d;
-  font-size:18px;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-@keyframes fade{
-  from{opacity:0;transform:scale(0.95);}
-  to{opacity:1;transform:scale(1);}
-}
-
-/* floating hearts */
-.heart{
-  position:fixed;
-  bottom:-20px;
   font-size:20px;
-  animation:float 6s linear infinite;
-}
-@keyframes float{
-  to{transform:translateY(-110vh);opacity:0;}
+  font-weight:bold;
 }
 
-/* images */
 .photo{
-  width:85%;
-  max-width:320px;
-  border-radius:20px;
-  margin:20px auto;
+  width:90%;
+  max-width:340px;
+  border-radius:25px;
+  margin:30px auto;
   box-shadow:0 20px 40px rgba(0,0,0,0.3);
 }
 
-/* thumb */
 #thumb{
-  font-size:80px;
-  cursor:pointer;
-  animation:pulse 2s infinite;
-}
-@keyframes pulse{
-  0%,100%{transform:scale(1);}
-  50%{transform:scale(1.1);}
+  font-size:90px;
+  margin-top:100px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- 🎵 background music -->
-<audio id="bgm" src="bgmusic.mp3" loop></audio>
-<audio id="bdaySong" src="birthday-song.mp3"></audio>
+<!-- AUDIO -->
+<audio id="bgm" src="background-music.mp3" loop></audio>
+<audio id="bday" src="birthday-song.mp3"></audio>
 
-<!-- 1️⃣ Fingerprint -->
+<!-- 1 Fingerprint -->
 <div class="screen active">
   <h2>🔒 Click here to open</h2>
   <p>(Touch your thumb 👆💖)</p>
   <div id="thumb" onclick="startMagic()">🖐️</div>
 </div>
 
-<!-- 2️⃣ Happy Birthday -->
+<!-- 2 Birthday -->
 <div class="screen">
   <h1>🎉 HAPPY BIRTHDAY 🎉</h1>
   <h1>SUBHASMlTA ✨</h1>
   <button onclick="next()">Next ✨</button>
 </div>
 
-<!-- 3️⃣ Celebration -->
+<!-- 3 Celebration -->
 <div class="screen">
   <h2>🎂🌸⭐</h2>
-  <p>Today is all about you</p>
-  <button onclick="next()">Next 💖</button>
-</div>
-
-<!-- 4️⃣ Photos -->
-<div class="screen">
-  <img src="pic1.jpg" class="photo">
-  <img src="pic2.jpg" class="photo">
-  <img src="pic3.jpg" class="photo">
+  <p>Today is all about you 💖</p>
   <button onclick="next()">Next 💫</button>
 </div>
 
-<!-- 5️⃣ AI Video -->
+<!-- 4 Pic 1 -->
 <div class="screen">
-  <video width="90%" autoplay muted loop playsinline id="aiVideo">
-    <source src="ai-video.mp4" type="video/mp4">
-  </video>
-</div>
-
-<!-- 6️⃣ Birthday Card -->
-<div class="screen">
-  <p>
-    Tumhare saath jo pal maine jiye hain,<br>
-    wo meri zindagi ke sabse khoobsurat pal hain.<br><br>
-
-    Saath me hasna, late night baatein,<br>
-    ek dusre ko bina wajah dekhte rehna…<br><br>
-
-    Main wada karta hoon,<br>
-    har sukh me, har dukh me,<br>
-    main tumhari **shield** ban ke rahunga.
-  </p>
+  <img src="pic1.jpg" class="photo">
+  <p>This smile deserves the whole sky ✨</p>
   <button onclick="next()">Next ❤️</button>
 </div>
 
-<!-- 7️⃣ Love -->
+<!-- 5 Pic 2 -->
+<div class="screen">
+  <img src="pic2.jpg" class="photo">
+  <p>Some people are born to be special 🌙</p>
+  <button onclick="next()">Next 💕</button>
+</div>
+
+<!-- 6 Pic 3 -->
+<div class="screen">
+  <img src="pic3.jpg" class="photo">
+  <p>And you… you are unforgettable 💫</p>
+  <button onclick="next()">Next 🎬</button>
+</div>
+
+<!-- 7 Video -->
+<div class="screen">
+  <video width="90%" autoplay muted playsinline id="vid">
+    <source src="video.mp4" type="video/mp4">
+  </video>
+</div>
+
+<!-- 8 Card -->
+<div class="screen">
+  <p>
+    Tumhare saath hasna,<br>
+    late night baatein,<br>
+    bina wajah ek dusre ko dekhna…<br><br>
+
+    Main wada karta hoon,<br>
+    har sukh aur har dukh me,<br>
+    main tumhari shield ban kar rahunga 💖
+  </p>
+  <button onclick="next()">Next 💌</button>
+</div>
+
+<!-- 9 Love -->
 <div class="screen">
   <h1>I love you ❤️</h1>
   <h2>ummma 😘</h2>
   <button onclick="next()">Last ✨</button>
 </div>
 
-<!-- 8️⃣ Shayari -->
+<!-- 10 Shayari -->
 <div class="screen">
   <p>
     Tumhare aane se main ek naya insaan ban paya,<br>
     mujhe nahi pata hamara rishta kya hai,<br>
-    par main tumse pyar karta hoon.<br><br>
+    par main tumse pyaar karta hoon.<br><br>
 
     Tumhari hasi, baatein aur aankhen,<br>
     sab ne dil ko itna ghaayal kar diya<br>
-    ki pyaar me padne ke alawa koi raasta nahi tha.<br><br>
+    ki pyaar me padne ke alawa<br>
+    koi choice hi nahi thi.<br><br>
 
     <b>Happy Birthday my princess 👑<br>
     my bachi 💕<br>
@@ -159,11 +158,13 @@ button{
 
 <script>
 let current=0;
-const screens=document.querySelectorAll('.screen');
+const screens=document.querySelectorAll(".screen");
 const bgm=document.getElementById("bgm");
-const bday=document.getElementById("bdaySong");
+const bday=document.getElementById("bday");
+const vid=document.getElementById("vid");
 
 function startMagic(){
+  bgm.volume=0.5;
   bgm.play();
   next();
 }
@@ -173,8 +174,7 @@ function next(){
   current++;
   screens[current].classList.add("active");
 
-  // video page music logic
-  if(current===4){
+  if(current===6){
     bgm.pause();
     bday.play();
     setTimeout(()=>{
@@ -184,17 +184,6 @@ function next(){
     },8000);
   }
 }
-
-// floating hearts
-setInterval(()=>{
-  const h=document.createElement("div");
-  h.className="heart";
-  h.innerHTML="💖";
-  h.style.left=Math.random()*100+"vw";
-  h.style.fontSize=(16+Math.random()*20)+"px";
-  document.body.appendChild(h);
-  setTimeout(()=>h.remove(),6000);
-},600);
 </script>
 
 </body>
